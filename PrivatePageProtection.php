@@ -1,5 +1,4 @@
 <?php
-
 /**
  * PrivatePageProtection extension - implements per page acccess restrictions based on user group.
  * Which groups are authorized for viewing is defined on-page, using a parser function.
@@ -40,9 +39,9 @@ $wgExtensionCredits['parserfunction'][] = array(
 );
 
 $wgExtensionMessagesFiles['PrivatePageProtection'] = dirname(__FILE__) . '/PrivatePageProtection.i18n.php';
+$wgExtensionMessagesFiles['PrivatePageProtectionMagic'] = dirname(__FILE__) . '/PrivatePageProtection.i18n.magic.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'privateppParserFirstCallInit';
-$wgHooks['LanguageGetMagic'][] = 'privateppLanguageGetMagic';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'privateppUserPermissionsErrors';
 $wgHooks['ArticleSave'][] = 'privateppArticleSave';
 
@@ -51,15 +50,6 @@ function privateppParserFirstCallInit( &$parser ) {
  
    // Create a function hook associating the magic word
    $parser->setFunctionHook('allow-groups', 'privateppRenderTag');
-   return true;
-}
- 
-// Tell MediaWiki which magic words can invoke the parser function.
-function privateppLanguageGetMagic( &$magicWords, $langCode ) {
- 
-   // Add the magic words.
-   // If the first element of the array is 0, the magic word is case insensitive.
-   $magicWords['allow-groups'] = array( 0, 'allow-groups', 'allowed-groups', 'ppp' ); #TODO: i18n?!
    return true;
 }
  
