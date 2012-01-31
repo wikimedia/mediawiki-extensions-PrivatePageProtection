@@ -28,21 +28,22 @@ $messages['qqq'] = array(
 
 /** German (Deutsch)
  * @author Daniel Kinzler
+ * @author Kghbln
  */
 $messages['de'] = array(
-	'privatepp-desc' => 'Beschränkt den Zugang zu Wikiseite auf der Basis von benutzergruppen.',
-	
-	'privatepp-lockout-prevented' => 'Aussperrung verhindert: Du hast versucht, den Zugang zu dieser Seite auf {{PLURAL:$2|die Gruppe|die Gruppen}} $1 zu beschränken. 
-Da du kein Mitglied {{PLURAL:$2|dieser Gruppe|einer dieser Gruppen}} bist, könntest du nach dem Speichern nicht mehr auf die Seite zugreifen. 
+	'privatepp-desc' => 'Ermöglicht das Beschränken das Zugangs zu Wikiseiten auf Basis von Benutzergruppen',
+	'privatepp-lockout-prevented' => 'Die Aussperrung wurde verhindert: Du hast versucht, den Zugang zu dieser Seite auf {{PLURAL:$2|die Benutzergruppe|die Benutzergruppen}} $1 zu beschränken. 
+Da du kein Mitglied {{PLURAL:$2|dieser Benutzergruppe|einer dieser Benutzergruppen}} bist, könntest du nach dem Speichern nicht mehr auf die Seite zugreifen. 
 Um dies zu vermeiden, wurde das Speichern abgebrochen.',
 );
 
-/** German (Deutsch)
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Daniel Kinzler
+ * @author Kghbln
  */
 $messages['de-formal'] = array(
-	'privatepp-lockout-prevented' => 'Aussperrung verhindert: Sie haben versucht, den Zugang zu dieser Seite auf {{PLURAL:$2|die Gruppe|die Gruppen}} $1 zu beschränken.
-Da Sie kein Mitglied {{PLURAL:$2|dieser Gruppe|einer dieser Gruppen}} sind, könnten Sie nach dem Speichern nicht mehr auf die Seite zugreifen.
+	'privatepp-lockout-prevented' => 'Die Aussperrung wurde verhindert: Sie haben versucht, den Zugang zu dieser Seite auf {{PLURAL:$2|die Benutzergruppe|die Benutzergruppen}} $1 zu beschränken. 
+Da Sie kein Mitglied {{PLURAL:$2|dieser Benutzergruppe|einer dieser Benutzergruppen}} sind, könnten Sie nach dem Speichern nicht mehr auf die Seite zugreifen. 
 Um dies zu vermeiden, wurde das Speichern abgebrochen.',
 );
 
