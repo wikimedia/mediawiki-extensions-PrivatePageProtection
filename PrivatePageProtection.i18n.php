@@ -86,6 +86,13 @@ Post que tu non es membro de {{PLURAL:$2|iste gruppo|alcun de iste gruppos}}, tu
 Le salveguarda ha essite abortate pro evitar isto.',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'privatepp-desc' => 'Erlaabt et den Accès op Säiten, op Basis vun de Benotzergruppen, ze limitéiern',
+);
+
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  */
