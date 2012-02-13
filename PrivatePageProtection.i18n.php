@@ -47,6 +47,15 @@ Da Sie kein Mitglied {{PLURAL:$2|dieser Benutzergruppe|einer dieser Benutzergrup
 Um dies zu vermeiden, wurde das Speichern abgebrochen.',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'privatepp-desc' => 'Zmóžnja wobgranicowanje pśistupa na bok na zakłaźe wužywarskeje kupki',
+	'privatepp-lockout-prevented' => 'Wuzamknjenje jo se zajźowało: Sy wopytał pśistup k toś tomu bokoju na {{PLURAL:$2|kupku|jadnu z kupkow}} $1 wobgranicowaś. Dokulaž njejsy cłonk {{PLURAL:$2|oś togo kupki|jadneje z toś tych kupkow}}, njeby měł pó składowanju žeden pśistup na bok.
+Składowanje jo se pśetergnuło, aby to wobinuło.',
+);
+
 /** French (Français)
  * @author Gomoko
  */
@@ -105,8 +114,9 @@ $messages['mk'] = array(
 
 /** Dutch (Nederlands)
  * @author SPQRobin
+ * @author Siebrand
  */
 $messages['nl'] = array(
-	'privatepp-desc' => 'Laat toe paginatoegang te beperken volgens gebruikersgroep',
+	'privatepp-desc' => 'Maakt het mogelijk paginatoegang te beperken volgens gebruikersgroepen',
 );
 
