@@ -26,6 +26,15 @@ $messages['qqq'] = array(
 	'privatepp-desc' => '{{desc}}',
 );
 
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'privatepp-desc' => 'Дазваляе абмяжоўваць доступ да старонак пэўным групам удзельнікам',
+	'privatepp-lockout-prevented' => 'Папярэджанае самаабмежаваньне: вы намагаліся абмежаваць доступ да старонкі {{PLURAL:$2|групе|адной з груп}} $1. Паколькі вы не належыце да {{PLURAL:$2|гэтай групы|адной з гэтых груп}}, вы бы не змаглі адкрыць старонку пасьля захаваньня наладаў.
+Захаваньне было спыненае, каб пазьбегнуць гэтага.',
+);
+
 /** German (Deutsch)
  * @author Daniel Kinzler
  * @author Kghbln
@@ -118,5 +127,15 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'privatepp-desc' => 'Maakt het mogelijk paginatoegang te beperken volgens gebruikersgroepen',
+);
+
+/** Polish (Polski)
+ * @author BeginaFelicysym
+ */
+$messages['pl'] = array(
+	'privatepp-desc' => 'Pozwala na ograniczanie dostępu strony na podstawie grupy użytkownika',
+	'privatepp-lockout-prevented' => 'Uniemożliwiono blokadę: próbujesz ograniczyć dostęp do tej strony dla {{PLURAL:$2|grupy|jednej z grup}}  $1 .
+Ponieważ nie jesteś członkiem  {{PLURAL:$2|tej grupy|żadnej tych grup}}, nie udałoby ci się uzyskać dostępu do strony po zapisaniu tego ustawienia. 
+Zapisywanie zostało przerwane aby temu zapobiec.',
 );
 
