@@ -127,6 +127,7 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'privatepp-desc' => 'Maakt het mogelijk paginatoegang te beperken volgens gebruikersgroepen',
+	'privatepp-lockout-prevented' => 'Beveiliging voorkomen: U hebt geprobeerd toegang tot deze pagina te beperken voor {{PLURAL:$2|de groep|één van de groepen}} $1. Omdat u geen lid bent van {{PLURAL:$2|deze groep|deze groepen}}, zou u geen toegang meer hebben tot deze pagina na ze op te slaan. Het opslaan is afgebroken om dit te voorkomen.',
 );
 
 /** Polish (Polski)
