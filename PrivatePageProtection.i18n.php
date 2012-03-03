@@ -65,6 +65,16 @@ $messages['dsb'] = array(
 Składowanje jo se pśetergnuło, aby to wobinuło.',
 );
 
+/** Spanish (Español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'privatepp-desc' => 'Permite restringir el acceso a las páginas según el grupo al que pertenezca el usuario',
+	'privatepp-lockout-prevented' => 'Bloqueo preventivo: Intentó restringir el acceso a esta página a los miembros {{PLURAL:$2|del grupo|de los grupos}} $1.
+Dado que no pertenece a {{PLURAL:$2|este grupo|ninguno de estos grupos}}, no podrá acceder a la página después de guardar.
+Se canceló la grabación para evitar esto.',
+);
+
 /** French (Français)
  * @author Gomoko
  */
