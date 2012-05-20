@@ -95,6 +95,16 @@ Dado que non pertence a {{PLURAL:$2|este grupo|ningún destes grupos}}, non pode
 Cancelouse o gardado para evitar isto.',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'privatepp-desc' => 'הגבלת גישה לדף לפי השתייכות לקבוצת משתמשים',
+	'privatepp-lockout-prevented' => 'הנעילה נמנעה: ניסית להגביל את הגישה לדף הזה {{PLURAL:$2|לקבוצה|לאחת מהקבוצות הבאות:}} $1.
+היות שחשבונך אינו רשום {{PLURAL:$2|בקבוצה הזאת|באחת מהקבוצות האלו}}, לא תהיה לך גישה לדף לאחר שמירתו.
+השמירה בוטלה כדי למנוע את זה.',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
@@ -112,6 +122,13 @@ $messages['ia'] = array(
 	'privatepp-lockout-prevented' => 'Exclusion prevenite: Tu ha tentate limitar le accesso a iste pagina {{PLURAL:$2|al gruppo|a un del gruppos}} $1. 
 Post que tu non es membro de {{PLURAL:$2|iste gruppo|alcun de iste gruppos}}, tu non poterea acceder al pagina post salveguardar lo. 
 Le salveguarda ha essite abortate pro evitar isto.',
+);
+
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'privatepp-desc' => '利用者グループに基づいてページへのアクセスを制限できるようにする',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
