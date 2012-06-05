@@ -124,6 +124,16 @@ Post que tu non es membro de {{PLURAL:$2|iste gruppo|alcun de iste gruppos}}, tu
 Le salveguarda ha essite abortate pro evitar isto.',
 );
 
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'privatepp-desc' => "Permette di limitare l'accesso alle pagine in base al gruppo utente",
+	'privatepp-lockout-prevented' => "Blocco evitato: stai cercando di limitare l'accesso a questa pagina {{PLURAL:$2|al gruppo|ai gruppi}} $1.
+Considerato che tu non sei un membro di {{PLURAL:$2|questo gruppo|nessuno di questi gruppi}}, non sarai più in grado di accedere a questa pagina dopo aver salvato.
+Il salvataggio è stato interrotto per evitare questo.",
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
