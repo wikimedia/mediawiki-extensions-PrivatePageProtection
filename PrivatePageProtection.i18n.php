@@ -141,6 +141,16 @@ $messages['ja'] = array(
 	'privatepp-desc' => '利用者グループに基づいてページへのアクセスを制限できるようにする',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'privatepp-desc' => '사용자 그룹을 바탕으로 문서 접근을 제한하도록 허용',
+	'privatepp-lockout-prevented' => '차단 잠금: $1 {{PLURAL:$2|그룹이|그룹 중 하나가}} 이 페이지에 대한 접근을 제한하려 했습니다.
+{{PLURAL:$2|이 그룹|그들의 어떤 그룹}}의 구성원이 아니기 때문에, 당신은 그것을 저장한 후 페이지에 접근할 수 없습니다.
+저장이 되지 않도록 중단되었습니다.',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
