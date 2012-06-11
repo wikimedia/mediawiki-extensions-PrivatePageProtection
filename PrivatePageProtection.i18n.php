@@ -151,6 +151,16 @@ $messages['ko'] = array(
 저장이 되지 않도록 중단되었습니다.',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'privatepp-desc' => 'Määd_et müjjelesch, der Zohjang op Sigge obb_en beschtemmpte Jropp Metmaacher ze bejränze.',
+	'privatepp-lockout-prevented' => 'Lockout prevented: You have tried to restrict access to this page to {{PLURAL:$2|the group|one of the groups}} $1. 
+Since you are not a member of {{PLURAL:$2|this group|any of these groups}}, you would not be able to access the page after saving it. 
+Mer han di Sigg nit afjeschpeischert, domet dat nidd_esu kütt.',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
