@@ -197,3 +197,13 @@ Ponieważ nie jesteś członkiem  {{PLURAL:$2|tej grupy|żadnej tych grup}}, nie
 Zapisywanie zostało przerwane aby temu zapobiec.',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'privatepp-desc' => "A përmëtt dë strenze l'acess dla pagina an dovrand la partìa utent",
+	'privatepp-lockout-prevented' => "Blòch evità: Ti it l'has provà a strenze l'acess a sta pagina-sì për {{PLURAL:$2|la partìa|un-a dle partìe}} $1. 
+Da già ch'it ses pa un mémber {{PLURAL:$2|dë sta partìa|d'un-a dë ste partìe}}, it podrìe pa esse bon a acede a la pagina d'apress d'avejlo salvà.
+Ël salvatagi a l'é stait abortì për evité sòn-sì.",
+);
+
