@@ -198,12 +198,13 @@ Zapisywanie zostało przerwane aby temu zapobiec.',
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'privatepp-desc' => "A përmëtt dë strenze l'acess dla pagina an dovrand la partìa utent",
-	'privatepp-lockout-prevented' => "Blòch evità: Ti it l'has provà a strenze l'acess a sta pagina-sì për {{PLURAL:$2|la partìa|un-a dle partìe}} $1. 
-Da già ch'it ses pa un mémber {{PLURAL:$2|dë sta partìa|d'un-a dë ste partìe}}, it podrìe pa esse bon a acede a la pagina d'apress d'avejlo salvà.
-Ël salvatagi a l'é stait abortì për evité sòn-sì.",
+	'privatepp-desc' => "A përmëtt dë strenze l'acess a la pàgina an dovrand na partìa d'utent",
+	'privatepp-lockout-prevented' => "Blocagi evità: A l'ha provà a arstrenze l'acess a sta pàgina-sì a {{PLURAL:$2|la partìa|un-a dle partìe}} $1. 
+Da già ch'a l'é pa un mémber {{PLURAL:$2|dë sta partìa|d'un-a dë ste partìe}}, a podrìe pa esse bon a acede a la pàgina apress d'avèjla salvà.
+Ël salvatagi a l'é stàit abortì për evité sòn.",
 );
 
