@@ -65,7 +65,7 @@ $messages['dsb'] = array(
 Składowanje jo se pśetergnuło, aby to wobinuło.',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
@@ -75,7 +75,7 @@ Dado que no pertenece a {{PLURAL:$2|este grupo|ninguno de estos grupos}}, no pod
 Se canceló la grabación para evitar esto.',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  */
 $messages['fr'] = array(
@@ -114,7 +114,7 @@ $messages['hsb'] = array(
 Składowanje je so přetorhnyło, zo by to wobešło.',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -168,7 +168,7 @@ $messages['lb'] = array(
 	'privatepp-desc' => 'Erlaabt et den Accès op Säiten, op Basis vun de Benotzergruppen, ze limitéiern',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -187,7 +187,7 @@ $messages['nl'] = array(
 	'privatepp-lockout-prevented' => 'Beveiliging voorkomen: U hebt geprobeerd toegang tot deze pagina te beperken voor {{PLURAL:$2|de groep|één van de groepen}} $1. Omdat u geen lid bent van {{PLURAL:$2|deze groep|deze groepen}}, zou u geen toegang meer hebben tot deze pagina na ze op te slaan. Het opslaan is afgebroken om dit te voorkomen.',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  */
 $messages['pl'] = array(
@@ -206,5 +206,14 @@ $messages['pms'] = array(
 	'privatepp-lockout-prevented' => "Blocagi evità: A l'ha provà a arstrenze l'acess a sta pàgina-sì a {{PLURAL:$2|la partìa|un-a dle partìe}} $1. 
 Da già ch'a l'é pa un mémber {{PLURAL:$2|dë sta partìa|d'un-a dë ste partìe}}, a podrìe pa esse bon a acede a la pàgina apress d'avèjla salvà.
 Ël salvatagi a l'é stàit abortì për evité sòn.",
+);
+
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'privatepp-desc' => 'Nagpapahintulot ng pagbabawas sa pagiging napupuntahan ng pahina na nakabatay sa pangkat ng tagagamit',
+	'privatepp-lockout-prevented' => 'Naiwasang mapagsarahan: Sinubukan mong bawasan ang pagiging nakakapunta ng {{PLURAL:$2|pangkat|isa sa mga pangkat}} na $1 sa pahinang ito. Dahil hindi ka isang kasapi sa {{PLURAL:$2|pangkat naito|anuman sa mga pangkat na ito}}, hindi mo magagawang puntahan ang pahina pagkaraang masagip ito,
+Binigo ang pagsasagip upang maiwasan ito.',
 );
 
