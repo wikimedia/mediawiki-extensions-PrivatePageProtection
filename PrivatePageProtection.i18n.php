@@ -26,7 +26,7 @@ $messages['qqq'] = array(
 	'privatepp-desc' => '{{desc}}',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -56,7 +56,7 @@ Da Sie kein Mitglied {{PLURAL:$2|dieser Benutzergruppe|einer dieser Benutzergrup
 Um dies zu vermeiden, wurde das Speichern abgebrochen.',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -85,7 +85,7 @@ Comme vous n'êtes pas membre de {{PLURAL:$2|ce groupe|un de ces groupes}}, vous
 L'enregistrement a été annulé pour éviter cela.",
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -105,7 +105,7 @@ $messages['he'] = array(
 השמירה בוטלה כדי למנוע את זה.',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
