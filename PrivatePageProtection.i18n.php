@@ -26,7 +26,7 @@ $messages['qqq'] = array(
 	'privatepp-desc' => '{{desc}}',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -46,7 +46,7 @@ Da du kein Mitglied {{PLURAL:$2|dieser Benutzergruppe|einer dieser Benutzergrupp
 Um dies zu vermeiden, wurde das Speichern abgebrochen.',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Daniel Kinzler
  * @author Kghbln
  */
