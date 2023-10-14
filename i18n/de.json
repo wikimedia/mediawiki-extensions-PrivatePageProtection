@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Daniel Kinzler",
+			"Kghbln"
+		]
+	},
+	"privatepp-desc": "Ermöglicht das Beschränken das Zugangs zu Wikiseiten auf Basis von Benutzergruppen",
+	"privatepp-lockout-prevented": "Die Aussperrung wurde verhindert: Du hast versucht, den Zugang zu dieser Seite auf {{PLURAL:$2|die Benutzergruppe|die Benutzergruppen}} $1 zu beschränken.\nDa du kein Mitglied {{PLURAL:$2|dieser Benutzergruppe|einer dieser Benutzergruppen}} bist, könntest du nach dem Speichern nicht mehr auf die Seite zugreifen.\nUm dies zu vermeiden, wurde das Speichern abgebrochen."
+}

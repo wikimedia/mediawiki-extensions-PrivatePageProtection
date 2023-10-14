@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"privatepp-desc": "Permet de restreindre l'accès à la page à un groupe d'utilisateurs",
+	"privatepp-lockout-prevented": "Verrouillage empêché: Vous avez essayé de limiter l'accès à cette page {{PLURAL:$2|au groupe|un des groupes}} $1 .\nComme vous n'êtes pas membre de {{PLURAL:$2|ce groupe|un de ces groupes}}, vous ne seriez plus en mesure d'accéder à la page après l'avoir enregistrée.\nL'enregistrement a été annulé pour éviter cela."
+}

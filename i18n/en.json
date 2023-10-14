@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Daniel Kinzler"
+		]
+	},
+	"privatepp-desc": "Allows restricting page access based on user group",
+	"privatepp-lockout-prevented": "Lockout prevented: You have tried to restrict access to this page to {{PLURAL:$2|the group|one of the groups}} $1.\nSince you are not a member of {{PLURAL:$2|this group|any of these groups}}, you would not be able to access the page after saving it.\nSaving was aborted to avoid this."
+}

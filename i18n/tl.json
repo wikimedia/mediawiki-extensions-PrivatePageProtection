@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"AnakngAraw"
+		]
+	},
+	"privatepp-desc": "Nagpapahintulot ng pagbabawas sa pagiging napupuntahan ng pahina na nakabatay sa pangkat ng tagagamit",
+	"privatepp-lockout-prevented": "Naiwasang mapagsarahan: Sinubukan mong bawasan ang pagiging nakakapunta ng {{PLURAL:$2|pangkat|isa sa mga pangkat}} na $1 sa pahinang ito. Dahil hindi ka isang kasapi sa {{PLURAL:$2|pangkat naito|anuman sa mga pangkat na ito}}, hindi mo magagawang puntahan ang pahina pagkaraang masagip ito,\nBinigo ang pagsasagip upang maiwasan ito."
+}

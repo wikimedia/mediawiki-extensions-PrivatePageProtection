@@ -1,0 +1,31 @@
+{
+	"name": "PrivatePageProtection",
+	"version": "1.2",
+	"author": [
+		"Daniel Kinzler",
+		"..."
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:PrivatePageProtection",
+	"descriptionmsg": "privatepp-desc",
+	"type": "parserfunction",
+	"requires": {
+		"MediaWiki": ">= 1.39.0"
+	},
+	"MessagesDirs": {
+		"PrivatePageProtection": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"PrivatePageProtectionMagic": "PrivatePageProtection.i18n.magic.php"
+	},
+	"AutoloadClasses": {
+		"PrivatePageProtection": "PrivatePageProtection.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "PrivatePageProtection::onParserFirstCallInit",
+		"getUserPermissionsErrorsExpensive": "PrivatePageProtection::ongetUserPermissionsErrorsExpensive",
+		"MultiContentSave": "PrivatePageProtection::onMultiContentSave"
+	},
+	"manifest_version": 2
+}

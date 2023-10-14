@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"BeginaFelicysym"
+		]
+	},
+	"privatepp-desc": "Pozwala na ograniczanie dostępu strony na podstawie grupy użytkownika",
+	"privatepp-lockout-prevented": "Uniemożliwiono blokadę: próbujesz ograniczyć dostęp do tej strony dla {{PLURAL:$2|grupy|jednej z grup}} $1 .\nPonieważ nie jesteś członkiem  {{PLURAL:$2|tej grupy|żadnej tych grup}}, nie udałoby ci się uzyskać dostępu do strony po zapisaniu tego ustawienia.\nZapisywanie zostało przerwane aby temu zapobiec."
+}

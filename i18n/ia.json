@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"privatepp-desc": "Permitte restringer le accesso a paginas secundo le gruppo del usator",
+	"privatepp-lockout-prevented": "Exclusion prevenite: Tu ha tentate limitar le accesso a iste pagina {{PLURAL:$2|al gruppo|a un del gruppos}} $1.\nPost que tu non es membro de {{PLURAL:$2|iste gruppo|alcun de iste gruppos}}, tu non poterea acceder al pagina post salveguardar lo.\nLe salveguarda ha essite abortate pro evitar isto."
+}

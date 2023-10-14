@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"privatepp-desc": "Permite restrinxir o acceso ás páxinas segundo o grupo ao que pertenza o usuario",
+	"privatepp-lockout-prevented": "Bloqueo preventivo: Intentou restrinxir o acceso a esta páxina aos membros {{PLURAL:$2|do grupo|dos grupos}} $1.\nDado que non pertence a {{PLURAL:$2|este grupo|ningún destes grupos}}, non poderá acceder á páxina despois de gardar.\nCancelouse o gardado para evitar isto."
+}

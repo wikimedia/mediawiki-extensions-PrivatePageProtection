@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"privatepp-desc": "Zmóžnja wobmjezowanje přistupa na strony na zakładźe wužiwarskeje skupiny",
+	"privatepp-lockout-prevented": "Wuzamknjenje je so zadźěwało: Sy spytał přistup k tutej stronje na {{PLURAL:$2|skupinsku skupinu|jednu ze skupinow}} $1 wobmjezować. Dokelž čłon {{PLURAL:$2|tuteje skupiny|jedneje z tutych skupinow}} njejsy, njeby po składowanju žadyn přistup na stronu měł.\nSkładowanje je so přetorhnyło, zo by to wobešło."
+}

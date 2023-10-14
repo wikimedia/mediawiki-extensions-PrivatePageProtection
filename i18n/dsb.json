@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"privatepp-desc": "Zmóžnja wobgranicowanje pśistupa na bok na zakłaźe wužywarskeje kupki",
+	"privatepp-lockout-prevented": "Wuzamknjenje jo se zajźowało: Sy wopytał pśistup k toś tomu bokoju na {{PLURAL:$2|kupku|jadnu z kupkow}} $1 wobgranicowaś. Dokulaž njejsy cłonk {{PLURAL:$2|oś togo kupki|jadneje z toś tych kupkow}}, njeby měł pó składowanju žeden pśistup na bok.\nSkładowanje jo se pśetergnuło, aby to wobinuło."
+}

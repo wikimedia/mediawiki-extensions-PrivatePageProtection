@@ -3,8 +3,10 @@
  * Internationalization file for magic words.
  */
 
-$magicWords = array();
+$magicWords = [];
 
-$magicWords['en'] = array(
-	'allow-groups' => array( 0, 'allow-groups', 'allowed-groups', 'ppp' ),
-);
+/** English */
+$magicWords['en'] = [
+	'allow-groups' => [ 0, 'allow-groups', 'allowed-groups', 'ppp' ],
+];
+

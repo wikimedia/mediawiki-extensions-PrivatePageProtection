@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Daniel Kinzler",
+			"Kghbln"
+		]
+	},
+	"privatepp-lockout-prevented": "Die Aussperrung wurde verhindert: Sie haben versucht, den Zugang zu dieser Seite auf {{PLURAL:$2|die Benutzergruppe|die Benutzergruppen}} $1 zu beschränken.\nDa Sie kein Mitglied {{PLURAL:$2|dieser Benutzergruppe|einer dieser Benutzergruppen}} sind, könnten Sie nach dem Speichern nicht mehr auf die Seite zugreifen.\nUm dies zu vermeiden, wurde das Speichern abgebrochen."
+}

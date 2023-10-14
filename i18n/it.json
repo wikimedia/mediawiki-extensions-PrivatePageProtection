@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"privatepp-desc": "Permette di limitare l'accesso alle pagine in base al gruppo utente",
+	"privatepp-lockout-prevented": "Blocco evitato: stai cercando di limitare l'accesso a questa pagina {{PLURAL:$2|al gruppo|ai gruppi}} $1.\nConsiderato che tu non sei un membro di {{PLURAL:$2|questo gruppo|nessuno di questi gruppi}}, non sarai più in grado di accedere a questa pagina dopo aver salvato.\nIl salvataggio è stato interrotto per evitare questo."
+}

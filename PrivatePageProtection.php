@@ -1,6 +1,6 @@
 <?php
 /**
- * PrivatePageProtection extension - implements per page acccess restrictions based on user group.
+ * PrivatePageProtection extension - implements per-page acccess restrictions based on user group.
  * Which groups are authorized for viewing is defined on-page, using a parser function.
  *
  * @file
@@ -10,156 +10,187 @@
  * @license GNU General Public Licence 2.0 or later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /*
-* WARNING: you can use this extension to deny read access to some pages. Keep in mind that this
-* may be circumvented in several ways. This extension doesn't try to
-* plug such holes. Also note that pages that are not readable will still be shown in listings,
-* such as the search page, categories, etc.
-*
-* Known ways to access "hidden" pages:
-* - transcluding as template. can be avoided using $wgNonincludableNamespaces.
-* Some search messages may reveal the page existance by producing links to it (MediaWiki:searchsubtitle,
-* MediaWiki:noexactmatch, MediaWiki:searchmenu-exists, MediaWiki:searchmenu-new...).
-*
-* NOTE: you cannot GRANT access to things forbidden by $wgGroupPermissions. You can only DENY access
-* granted there.
-*/
-
-if ( !defined( 'MEDIAWIKI' ) ) {
-	echo( "This file is an extension to the MediaWiki software and cannot be used standalone.\n" );
-	die( 1 );
-}
-
-$wgExtensionCredits['parserfunction'][] = array(
-	'path' => __FILE__,
-	'name' => 'PrivatePageProtection',
-	'author' => array( 'Daniel Kinzler'),
-	'url' => 'http://mediawiki.org/wiki/Extension:PrivatePageProtection',
-	'descriptionmsg' => 'privatepp-desc',
-);
-
-$wgExtensionMessagesFiles['PrivatePageProtection'] = dirname(__FILE__) . '/PrivatePageProtection.i18n.php';
-$wgExtensionMessagesFiles['PrivatePageProtectionMagic'] = dirname(__FILE__) . '/PrivatePageProtection.i18n.magic.php';
-
-$wgHooks['ParserFirstCallInit'][] = 'privateppParserFirstCallInit';
-$wgHooks['getUserPermissionsErrorsExpensive'][] = 'privateppUserPermissionsErrors';
-$wgHooks['ArticleSave'][] = 'privateppArticleSave';
-
-// Tell MediaWiki that the parser function exists.
-function privateppParserFirstCallInit( &$parser ) {
- 
-   // Create a function hook associating the magic word
-   $parser->setFunctionHook('allow-groups', 'privateppRenderTag');
-   return true;
-}
- 
-// Render the output of the parser function.
-function privateppRenderTag( $parser, $param1 = '', $param2 = '' ) {
-   $args = func_get_args();
-   
-   if ( count( $args ) <= 1 ) {
-	   return true;
-   }
-   
-   $groups = array();
-   
-   for ( $i = 1; $i < count( $args ); $i++ ) {
-	   $groups[] = strtolower( trim( $args[$i] ) ); #XXX: allow localized group names?!
-   }
-   
-   $groups = implode( "|", $groups );
-	
-   $out = $parser->getOutput();
-   
-   $ppp = $out->getProperty('ppp_allowed_groups');
-   if ( $ppp ) {
-	   $groups = $ppp . '|' . $groups;
-   }
- 
-   $out->setProperty('ppp_allowed_groups', $groups);
- 
-   return array( 'text' => '', 'ishtml' => true, 'inline' => true );
-}
-
-/**
- * Returns a list of allowed groups for the given page.
+ * WARNING: you can use this extension to deny read access to some pages. Keep in mind that this
+ * may be circumvented in several ways. This extension doesn't try to
+ * plug such holes. Also note that pages that are not readable will still be shown in listings,
+ * such as the search page, categories, etc.
+ *
+ * Known ways to access "hidden" pages:
+ * - transcluding as template. can be avoided using $wgNonincludableNamespaces.
+ * Some search messages may reveal the page existance by producing links to it (MediaWiki:searchsubtitle,
+ * MediaWiki:noexactmatch, MediaWiki:searchmenu-exists, MediaWiki:searchmenu-new...).
+ *
+ * NOTE: you cannot GRANT access to things forbidden by $wgGroupPermissions. You can only DENY access
+ * granted there.
  */
-function privateppGetAllowedGroups( $title ) {
-	$result = array();
-	$id = $title->getArticleID();
 
-	if ( $id == 0 ) {
-		return array();
+class PrivatePageProtection {
+
+	/**
+	 * Tell MediaWiki that the parser function exists.
+	 *
+	 * @param &$parser Parser
+	 */
+	public static function onParserFirstCallInit( &$parser ) {
+		// Create a function hook associating the magic word
+		$parser->setFunctionHook( 'allow-groups', [ __CLASS__, 'renderTag' ] );
 	}
 
-	$dbr = wfGetDB( DB_SLAVE );
-	$res = $dbr->select( array( 'page_props' ),
-		array( 'pp_value' ),
-		array( 'pp_page' => $id, 'pp_propname' => 'ppp_allowed_groups' ),
-		__METHOD__ );
+	/**
+	 * Render the output of the parser function.
+	 * Literally the callback for onParserFirstCallInit() above.
+	 */
+	function renderTag( $parser, $param1 = '', $param2 = '' ) {
+		$args = func_get_args();
 
-	if ( $res !== false ) {
-		foreach ( $res as $row ) {
-			$result[] = $row->pp_value;
+		if ( count( $args ) <= 1 ) {
+			return true;
+		}
+
+		$groups = [];
+
+		for ( $i = 1; $i < count( $args ); $i++ ) {
+			$groups[] = strtolower( trim( $args[$i] ) ); #XXX: allow localized group names?!
+		}
+
+		$groups = implode( '|', $groups );
+
+		$out = $parser->getOutput();
+
+		$ppp = $out->getPageProperty( 'ppp_allowed_groups' );
+		if ( $ppp ) {
+			$groups = $ppp . '|' . $groups;
+		}
+
+		$out->setPageProperty( 'ppp_allowed_groups', $groups );
+
+		return [
+			'text' => '',
+			'ishtml' => true,
+			'inline' => true
+		];
+	}
+
+	/**
+	 * Returns a list of allowed groups for the given page.
+	 *
+	 * @param Title $title
+	 * @return array
+	 */
+	public static function getAllowedGroups( Title $title ) {
+		$result = [];
+		$id = $title->getArticleID();
+
+		if ( $id == 0 ) {
+			return [];
+		}
+
+		$dbr = wfGetDB( DB_REPLICA );
+		$res = $dbr->select(
+			[ 'page_props' ],
+			[ 'pp_value' ],
+			[ 'pp_page' => $id, 'pp_propname' => 'ppp_allowed_groups' ],
+			__METHOD__
+		);
+
+		if ( $res !== false ) {
+			foreach ( $res as $row ) {
+				$result[] = $row->pp_value;
+			}
+		}
+
+		#TODO: use object cache?! get from parser cache?!
+		return $result;
+	}
+
+	/**
+	 * @param array|bool|string|null $groups
+	 * @param User $user
+	 * @return null|array Array containing error message and its params in case of error, null on success
+	 */
+	public static function getAccessError( $groups, User $user ) {
+		if ( !$groups ) {
+			return null;
+		}
+
+		if ( is_string( $groups ) ) {
+			$groups = explode( '|', $groups );
+		}
+
+		$ugroups = MediaWikiServices::getInstance()
+			->getUserGroupManager()
+			->getUserEffectiveGroups( $user, User::READ_NORMAL, true /* avoid cache */ );
+
+		$match = array_intersect( $ugroups, $groups );
+
+		if ( $match ) {
+			# group is allowed - keep processing
+			return null;
+		} else {
+			# group is denied - abort
+			$lang = RequestContext::getMain()->getLanguage();
+			$groupLinks = [];
+			if ( is_array( $groups ) ) {
+				foreach ( $groups as $group ) {
+					$groupLinks[] = $lang->getGroupName( $group );
+				}
+			}
+
+			$err = [
+				'badaccess-groups',
+				$lang->commaList( $groupLinks ),
+				count( $groups )
+			];
+
+			return $err;
 		}
 	}
 
-	#TODO: use object cache?! get from parser cache?!
-	return $result;
-}
-
-function privateppGetAccessError( $groups, $user ) {
-	global $wgLang;
-	
-	if ( !$groups ) return null;
-	if ( is_string( $groups ) ) $groups = explode('|', $groups);
-	
-	$ugroups = $user->getEffectiveGroups( true );;
-
-	$match = array_intersect( $ugroups, $groups );
-
-	if ( $match ) {
-		# group is allowed - keep processing
-		return null;
-	} else {
-		# group is denied - abort
-		$groupLinks = array_map( array( 'User', 'makeGroupLinkWiki' ), $groups );
+	public static function ongetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
+		$groups = self::getAllowedGroups( $title );
+		$result = self::getAccessError( $groups, $user );
 		
-		$err = array(
-			'badaccess-groups',
-			$wgLang->commaList( $groupLinks ),
-			count( $groups )
-		);
-				
-		return $err;
+		if ( !$result ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-}
 
-function privateppUserPermissionsErrors( $title, $user, $action, &$result ) {
-	$groups = privateppGetAllowedGroups( $title );
-	$result = privateppGetAccessError( $groups, $user );
-	
-	if ( !$result ) return true;
-	else return false;
-}
+	/**
+	 * Prevent users from saving a page with access restrictions that
+	 * would lock them out of the page.
+	 *
+	 * @param MediaWiki\Revision\RenderedRevision $renderedRevision
+	 * @param MediaWiki\User\UserIdentity $user
+	 * @param CommentStoreComment $summary
+	 * @param int $flags
+	 * @param Status $hookStatus
+	 */
+	public static function onMultiContentSave(
+		MediaWiki\Revision\RenderedRevision $renderedRevision,
+		MediaWiki\User\UserIdentity $user,
+		CommentStoreComment $summary,
+		$flags,
+		Status $hookStatus
+	) {
+		$user = User::newFromIdentity( $user );
 
-function privateppArticleSave( &$wikipage, &$user, &$text, &$summary,
-							$minor, $watchthis, $sectionanchor, &$flags, &$status ) {
-				
-	# prevent users from saving a page with access restrictions that
-	# would lock them out opf the page.
-			
-	#XXX: calling prepareTextForEdit() causes the text to be parsed a second time! 
-	#     but there doesn't seem to be a hook that has access to the parseroutput...
-	$editInfo = $wikipage->prepareTextForEdit( $text, null, $user ); 
-	$groups = $editInfo->output->getProperty('ppp_allowed_groups');
+		$groups = $renderedRevision->getRevisionParserOutput()->getPageProperty( 'ppp_allowed_groups' );
 
-	$err = privateppGetAccessError( $groups, $user );
-	if ( !$err ) return true;
-	
-	$err[0] = 'privatepp-lockout-prevented'; #override message key
-	throw new PermissionsError( 'edit', array( $err ) );
-	
-	#$status->fatal( $err[0], $err[1], $err[2] ); # message, groups, count
-	#return false;
+		$err = self::getAccessError( $groups, $user );
+		if ( !$err ) {
+			return true;
+		}
+
+		$err[0] = 'privatepp-lockout-prevented'; # override message key
+
+		$hookStatus->fatal( $err[0], $err[1], $err[2] ); # message, groups, count
+
+		return false;
+	}
+
 }
