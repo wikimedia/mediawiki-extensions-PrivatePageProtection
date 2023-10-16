@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Armando-Martin"
+			"Armando-Martin",
+			"MarcoAurelio"
 		]
 	},
 	"privatepp-desc": "Permite restringir el acceso a las páginas según el grupo al que pertenezca el usuario",
-	"privatepp-lockout-prevented": "Bloqueo preventivo: Intentó restringir el acceso a esta página a los miembros {{PLURAL:$2|del grupo|de los grupos}} $1.\nDado que no pertenece a {{PLURAL:$2|este grupo|ninguno de estos grupos}}, no podrá acceder a la página después de guardar.\nSe canceló la grabación para evitar esto."
+	"privatepp-lockout-prevented": "Bloqueo impedido: Has intentado restringir el acceso a esta página {{PLURAL:$2|al grupo|a uno de los siguientes grupos}}: $1.\nSin embargo, ya que no eres miembro de {{PLURAL:$2|ese grupo|ninguno de esos grupos}}, no podrás acceder a la página después de guardarla.\nSe canceló el guardado para evitarlo."
 }

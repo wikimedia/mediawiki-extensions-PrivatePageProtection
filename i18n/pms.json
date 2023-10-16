@@ -6,5 +6,5 @@
 		]
 	},
 	"privatepp-desc": "A përmëtt dë strenze l'acess a la pàgina an dovrand na partìa d'utent",
-	"privatepp-lockout-prevented": "Blocagi evità: A l'ha provà a arstrenze l'acess a sta pàgina-sì a {{PLURAL:$2|la partìa|un-a dle partìe}} $1.\nDa già ch'a l'é pa un mémber {{PLURAL:$2|dë sta partìa|d'un-a dë ste partìe}}, a podrìe pa esse bon a acede a la pàgina apress d'avèjla salvà.\nËl salvatagi a l'é stàit abortì për evité sòn."
+	"privatepp-lockout-prevented": "Blocagi evità: A l'ha provà a arstrenze l'acess a sta pàgina-sì a {{PLURAL:$2|la partìa|un-a dle partìe}} $1.\nDa già ch'a l'é pa un mèmber {{PLURAL:$2|dë sta partìa|d'un-a dë ste partìe}}, a podrìa pi riussì a acede a la pàgina apress d'avèjla argistrà.\nL'argistrassion a l'é stàita abortìa për evité sòn."
 }
