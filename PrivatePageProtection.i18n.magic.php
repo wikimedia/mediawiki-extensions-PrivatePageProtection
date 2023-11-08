@@ -9,4 +9,3 @@ $magicWords = [];
 $magicWords['en'] = [
 	'allow-groups' => [ 0, 'allow-groups', 'allowed-groups', 'ppp' ],
 ];
-

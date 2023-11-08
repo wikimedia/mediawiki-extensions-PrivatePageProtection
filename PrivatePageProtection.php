@@ -7,7 +7,7 @@
  * @ingroup Extensions
  * @author Daniel Kinzler, brightbyte.de
  * @copyright © 2007 Daniel Kinzler
- * @license GNU General Public Licence 2.0 or later
+ * @license GPL-2.0-or-later
  */
 
 use MediaWiki\MediaWikiServices;
@@ -32,9 +32,9 @@ class PrivatePageProtection {
 	/**
 	 * Tell MediaWiki that the parser function exists.
 	 *
-	 * @param &$parser Parser
+	 * @param Parser &$parser
 	 */
-	public static function onParserFirstCallInit( &$parser ) {
+	public static function onParserFirstCallInit( Parser &$parser ) {
 		// Create a function hook associating the magic word
 		$parser->setFunctionHook( 'allow-groups', [ __CLASS__, 'renderTag' ] );
 	}
@@ -42,8 +42,13 @@ class PrivatePageProtection {
 	/**
 	 * Render the output of the parser function.
 	 * Literally the callback for onParserFirstCallInit() above.
+	 *
+	 * @param Parser $parser
+	 * @param string $param1
+	 * @param string $param2
+	 * @return array|bool
 	 */
-	function renderTag( $parser, $param1 = '', $param2 = '' ) {
+	public static function renderTag( $parser, $param1 = '', $param2 = '' ) {
 		$args = func_get_args();
 
 		if ( count( $args ) <= 1 ) {
@@ -53,7 +58,7 @@ class PrivatePageProtection {
 		$groups = [];
 
 		for ( $i = 1; $i < count( $args ); $i++ ) {
-			$groups[] = strtolower( trim( $args[$i] ) ); #XXX: allow localized group names?!
+			$groups[] = strtolower( trim( $args[$i] ) ); # XXX: allow localized group names?!
 		}
 
 		$groups = implode( '|', $groups );
@@ -102,7 +107,7 @@ class PrivatePageProtection {
 			}
 		}
 
-		#TODO: use object cache?! get from parser cache?!
+		# TODO: use object cache?! get from parser cache?!
 		return $result;
 	}
 
@@ -149,10 +154,17 @@ class PrivatePageProtection {
 		}
 	}
 
+	/**
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param mixed &$result
+	 * @return bool
+	 */
 	public static function ongetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
 		$groups = self::getAllowedGroups( $title );
 		$result = self::getAccessError( $groups, $user );
-		
+
 		if ( !$result ) {
 			return true;
 		} else {
@@ -169,6 +181,7 @@ class PrivatePageProtection {
 	 * @param CommentStoreComment $summary
 	 * @param int $flags
 	 * @param Status $hookStatus
+	 * @return bool
 	 */
 	public static function onMultiContentSave(
 		MediaWiki\Revision\RenderedRevision $renderedRevision,
