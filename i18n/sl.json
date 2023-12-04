@@ -4,5 +4,6 @@
 			"Eleassar"
 		]
 	},
+	"privatepp-desc": "Omogoča omejitev dostopa do strani po skupinah uporabnikov",
 	"privatepp-lockout-prevented": "Zaklepanje preprečeno: Poskušali ste omejiti dostop do te strani na {{PLURAL:$2|skupino|eno od skupin}} $1.\nKer niste član {{PLURAL:$2|te skupine|nobene od teh skupin}}, po shranitvi do strani ne bi mogli dostopati.\nDa bi se temu izognili, je bilo shranjevanje prekinjeno."
 }
