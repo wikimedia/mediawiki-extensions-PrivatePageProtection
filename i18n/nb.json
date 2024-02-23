@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"privatepp-desc": "Gjør det mulig å tilpasse sidetilgang etter brukergruppe",
+	"privatepp-lockout-prevented": "Utelåsing forhindret: Du har prøvd å begrense tilgangen til denne sida til {{PLURAL:$2|gruppa|gruppene}} $1. Siden du ikke er medlem av {{PLURAL:$2|denne gruppa|en av disse gruppene}} vil du ikke lenger kunne få tilgang til siden etter at du har laget.\nLagringen ble avbrutt for å forhindre dette."
+}
