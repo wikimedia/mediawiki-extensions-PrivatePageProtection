@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Daniel Kinzler"
+			"Daniel Kinzler",
+			"Jon Harald Søby"
 		]
 	},
 	"privatepp-desc": "{{desc}}",
-	"privatepp-lockout-prevented": "Error message shown when the user tries to save a page containing <code>{{#allow-groups:some-group-the-user-is-not-a-member-of}}</code>.\nParameters:* $1 is the user-supplied group string (can be pipe-separated to include multiple groups, e.g. <code>sysop|bureaucrat</code> or just a single group, like <code>sysop</code>)\n* $2 is the amount of groups"
+	"privatepp-lockout-prevented": "Error message shown when the user tries to save a page containing <code>{{#allow-groups:some-group-the-user-is-not-a-member-of}}</code>.\n\nParameters:\n* $1 is the user-supplied group string (can be pipe-separated to include multiple groups, e.g. <code>sysop|bureaucrat</code> or just a single group, like <code>sysop</code>)\n* $2 is the amount of groups"
 }
