@@ -127,7 +127,7 @@ class PrivatePageProtection {
 
 		$ugroups = MediaWikiServices::getInstance()
 			->getUserGroupManager()
-			->getUserEffectiveGroups( $user, User::READ_NORMAL, true /* avoid cache */ );
+			->getUserEffectiveGroups( $user, IDBAccessObject::READ_NORMAL, true /* avoid cache */ );
 
 		$match = array_intersect( $ugroups, $groups );
 
