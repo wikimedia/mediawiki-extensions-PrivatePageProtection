@@ -10,7 +10,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /*
  * WARNING: you can use this extension to deny read access to some pages. Keep in mind that this
