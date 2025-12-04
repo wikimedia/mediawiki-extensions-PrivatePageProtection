@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Peterxy12"
+		]
+	},
+	"privatepp-desc": "允许根据用户群组来限制页面访问",
+	"privatepp-lockout-prevented": "被防止锁定：您尝试将对此页面的访问限制成{{PLURAL:$2|群组|其中一个群组}}“$1”。\n因为您不是{{PLURAL:$2|此群组|这些群组其一}}的成员，在保存后您会无法访问该页面。\n为了避免这种情况，已中止保存。"
+}
