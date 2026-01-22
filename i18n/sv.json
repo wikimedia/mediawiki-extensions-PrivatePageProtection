@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stefan2255"
+		]
+	},
+	"privatepp-desc": "Tillåter begränsning av åtkomst till sidor baserat på användargrupp",
+	"privatepp-lockout-prevented": "Utlåsning förhindrad: Du har försökt begränsa åtkomsten till den här sidan till {{PLURAL:$2|gruppen|en av grupperna}} $1.\nEftersom du inte är medlem i {{PLURAL:$2|den här gruppen|någon av dessa grupper}} kommer du inte att kunna komma åt sidan efter att du har sparat den.\nSparande avbröts för att undvika detta."
+}
