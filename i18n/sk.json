@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"privatepp-desc": "Umožňuje obmedziť prístup k stránke podľa používateľskej skupiny",
+	"privatepp-lockout-prevented": "Zabránilo sa strate prístupu: Pokúsili ste sa obmedziť prístup k tejto stránke na {{PLURAL:$2|skupinu|jednu zo skupín}} $1.\nKeďže nie ste členom {{PLURAL:$2|tejto skupiny|žiadnej z týchto skupín}}, po uložení by ste na stránku nemali prístup.\nUloženie bolo preto zrušené."
+}
